@@ -12,7 +12,8 @@ import (
 var DB *gorm.DB
 
 func InitMySQL() {
-	dsn := conf.MySqlUser + ":" + conf.MySqlPassword + "@tcp(" + conf.MysqlIP + ")/" + conf.MySqlDataBase + "?charset=utf8mb4&parseTime=True&loc=Local"
+
+	dsn := conf.MySqlUser + ":" + conf.MySqlPassword + "@tcp(" + conf.MysqlIP + ":" + conf.MysqlPort + ")/" + conf.MySqlDataBase + "?charset=utf8mb4&parseTime=True&loc=Local"
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{NamingStrategy: schema.NamingStrategy{SingularTable: true}})
 	if err != nil {
 		panic(err)

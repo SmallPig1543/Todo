@@ -36,7 +36,7 @@ type TaskInfoResp struct {
 	Id        uint   `json:"id,omitempty"`
 	Title     string `json:"title"`
 	Content   string `json:"content"`
-	View      int    `json:"view,omitempty"`
+	View      int    `json:"view"`
 	Status    int    `json:"status"`
 	StartTime string `json:"start_time"`
 	EndTime   string `json:"end_time"`
